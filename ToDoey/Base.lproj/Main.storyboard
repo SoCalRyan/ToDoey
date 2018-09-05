@@ -36,10 +36,13 @@
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="so8-rj-qcQ">
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
-                                <action selector="addButtonPressed:" destination="dPD-O9-2kX" id="qVV-Wc-tPr"/>
+                                <action selector="addButtonPressed:" destination="dPD-O9-2kX" id="PDw-cF-bS9"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="addButtonOutlet" destination="so8-rj-qcQ" id="Z0a-FD-eFI"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="p2H-vf-qzU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

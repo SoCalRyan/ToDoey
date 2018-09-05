@@ -10,13 +10,20 @@ import UIKit
 
 class ToDoListViewController: UITableViewController{
 	
+	@IBOutlet weak var addButtonOutlet: UIBarButtonItem!
+	
+	let defaults = UserDefaults.standard
+	
 	var itemArray = ["Chest", "Back", "Delts", "Legs", "Arms"]
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		// Do any additional setup after loading the view, typically from a nib.
+		
+		if let items = defaults.array(forKey: "ToDoListArray") as? [String] {
+			itemArray = items
+		}
+		
 	}
-
 		//MARK - Tableview Datasource Methhod
 	
 	override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -68,6 +75,9 @@ class ToDoListViewController: UITableViewController{
 		//What will happen once the user clicks the Add Item button on out UIAlert
 		
 		self.itemArray.append(textField.text!)
+		
+		// 
+		self.defaults.setValue(self.itemArray, forKey: "ToDoListArray")
 		
 		self.tableView.reloadData()
 		
